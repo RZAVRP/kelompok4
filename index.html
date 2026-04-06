@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REISEN - Luxury Travel</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header & Nav */
+        header {
+            background: linear-gradient(rgba(21, 12, 97, 0.8), rgba(20, 59, 108, 0.8)), 
+                        url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        header h1 { font-size: 3.5rem; letter-spacing: 5px; margin-bottom: 10px; }
+
+        nav {
+            background: #111827;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: white;
+            padding: 1.2rem 1.5rem;
+            display: block;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul li a:hover { color: #fbbf24; }
+
+        /* Team Section */
+        .team {
+            background: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .team h2 { margin-bottom: 30px; color: #111827; }
+
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .team-badge {
+            background: #f1f5f9;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Main Content */
+        .container { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
+
+        .intro-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* Product Cards */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover { transform: translateY(-10px); }
+
+        .card-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+
+        .card-body h3 { color: #1e3a8a; margin-bottom: 15px; font-size: 1.4rem; }
+
+        .card-body ul {
+            list-style: none;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .card-body ul li::before {
+            content: '✦ ';
+            color: #fbbf24;
+        }
+
+        .price-box {
+            background: #fef3c7;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #92400e;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        /* Gallery Section */
+        .gallery-title { text-align: center; margin: 50px 0 30px; }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery img:hover { filter: brightness(0.7); }
+
+        /* Contact Section */
+        #kontak {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #111827;
+            color: white;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .contact-info { margin: 20px 0; }
+        .contact-info p { margin: 10px 0; opacity: 0.9; }
+
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            .product-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>REISEN</h1>
+    <p>Luxury travel means more comfort, more memories</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#team">Anggota</a></li>
+        <li><a href="#dataset">Paket Wisata</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+    </ul>
+</nav>
+
+<section class="team" id="team">
+    <h2>Anggota Kelompok 4</h2>
+    <div class="team-container">
+        <span class="team-badge">Siti Sarah Al Aisyah</span>
+        <span class="team-badge">Kinanti Asya Daniswara</span>
+        <span class="team-badge">Reva Adinda Ayu</span>
+        <span class="team-badge">Raffy Ibnu Fairuz</span>
+        <span class="team-badge">Ahmad Zakaria</span>
+        <span class="team-badge">Hafidz Syadi</span>
+        <span class="team-badge">Rizki Muhamad Fariz</span>
+        <span class="team-badge">Nurhabibah Lubis</span>
+    </div>
+</section>
+
+<main class="container">
+    <article class="intro-card">
+        <h2>ELEGANCE IN EVERY JOURNEY</h2>
+        <p>At <strong>REISEN</strong>, we curate bespoke travel packages tailored to your sophisticated taste. 
+        Whether it's historical heritage or floral paradise, we ensure every journey is wrapped in comfort and elegance. 🏨💎</p>
+    </article>
+
+    <section id="dataset">
+        <h2 style="text-align: center; margin-bottom: 40px; color: #1e3a8a;">OUR EXCLUSIVE PACKAGES</h2>
+        
+        <div class="product-grid">
+            <div class="card">
+                <img src="teempat2.jpeg" alt="Santerra" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=400&q=80'">
+                <div class="card-body">
+                    <h3>Santerra de Laponte</h3>
+                    <p style="font-size: 0.85rem; color: #666; margin-bottom: 15px;">Rasakan ketenangan dan keindahan alam. Dari taman bunga yang menawan hingga pengalaman wisata tak terlupakan.</p>
+                    <ul>
+                        <li>Tiket Masuk Terusan</li>
+                        <li>Akses Semua Spot Foto</li>
+                        <li>Voucher Makan Siang</li>
+                        <li>Private Shuttle Area</li>
+                    </ul>
+                    <div class="price-box">Estimasi: ± 400k / Orang</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="museum.jpeg" alt="Museum" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=400&q=80'">
+                <div class="card-body">
+                    <h3>Museum Kebangkitan</h3>
+                    <p style="font-size: 0.85rem; color: #666; margin-bottom: 15px;">Jelajahi keindahan sejarah dalam balutan arsitektur klasik yang megah untuk Anda yang menghargai warisan budaya.</p>
+                    <ul>
+                        <li>Eksklusif Tour Guide</li>
+                        <li>Akses Galeri Khusus</li>
+                        <li>Audio Guide Device</li>
+                        <li>Coffee & Snack Break</li>
+                    </ul>
+                    <div class="price-box">Estimasi: ± 170k / Orang</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="tamanmini.jpeg" alt="TMII" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1596422846543-b5c64483f939?auto=format&fit=crop&w=400&q=80'">
+                <div class="card-body">
+                    <h3>Taman Mini (TMII)</h3>
+                    <p style="font-size: 0.85rem; color: #666; margin-bottom: 15px;">Jelajahi keindahan budaya Nusantara dalam satu destinasi istimewa. Harmoni tradisi dan arsitektur megah.</p>
+                    <ul>
+                        <li>Paket Hemat Berdua</li>
+                        <li>Tiket Masuk Kawasan</li>
+                        <li>Akses Anjungan Pilihan</li>
+                        <li>Souvenir Khas Reisen</li>
+                    </ul>
+                    <div class="price-box">Estimasi: ± 320k / 2 Orang</div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="gallery-title">Visual Experience</h3>
+        <div class="gallery">
+            <img src="teempat2.jpeg" alt="Gallery 1" onerror="this.src='https://via.placeholder.com/200?text=Beauty+View'">
+            <img src="makanan2.jpeg" alt="Gallery 2" onerror="this.src='https://via.placeholder.com/200?text=Cuisine'">
+            <img src="prima.jpeg" alt="Gallery 3" onerror="this.src='https://via.placeholder.com/200?text=Exclusive'">
+            <img src="ikan.jpeg" alt="Gallery 4" onerror="this.src='https://via.placeholder.com/200?text=Nature'">
+            <img src="mieayam.jpeg" alt="Gallery 5" onerror="this.src='https://via.placeholder.com/200?text=History'">
+        </div>
+    </section>
+</main>
+
+<section id="kontak">
+    <h2>Connect With Us</h2>
+    <div class="contact-info">
+        <p><strong>📞 Phone:</strong> +62 82X-XXXX-XXXX</p>
+        <p><strong>✉ Email:</strong> CODING932@gmail.com</p>
+        <p><strong>📍 Address:</strong> Jl. Pendidikan, Grogol, Kec. Limo, Depok, Jawa Barat</p>
+    </div>
+    <p style="margin-top: 25px; font-style: italic; color: #fbbf24;">"Easier travel in luxury with Reisen"</p>
+</section>
+
+<footer>
+    <p>&copy; 2026 Tugas Perhotelan - Kelompok 4 | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
